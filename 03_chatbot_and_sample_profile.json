@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "chatbot_widget": {
+    "widget_id": "Career_Navigator_Chat",
+    "type": "chatbot",
+    "label": "Career Navigator Chat",
+    "system_prompt": "Assistant: I'm your AspiraPath AI career navigator! I've reviewed your personalized plan. Ask me anything about your roadmap, how to overcome specific constraints, clarification on any recommendations, or how to adapt your plan as life changes. I'm here to help you achieve your career aspiration!",
+    "initial_user_message_template": "Human: I want to discuss my personalized career plan. My aspiration is @Career_Aspiration, my current situation is @Current_Situation, my constraints are financial: @Financial_Constraints, time: @Time_Constraints, and other: @Geographic_and_Other_Constraints. My skill gaps are @Skill_Gap_Assessment and my roadmap is @Constraint_Aware_Learning_Roadmap."
+  },
+  "sample_execution_profile": {
+    "career_aspiration": "Data Product Specialist / Junior Product Manager",
+    "current_situation": "Former Business Analyst with a 5-year career break due to caregiving/maternity.",
+    "financial_constraints": "Budget under ₹3,000 for courses/certifications.",
+    "time_constraints": "10-12 hours/week available. Caregiving blocked from 4:00 PM to 8:30 PM.",
+    "geographic_and_other_constraints": "Remote/hybrid preference in India. Low initial confidence in modern tech tools (SQL, Jira, AI workflows)."
+  }
+}
