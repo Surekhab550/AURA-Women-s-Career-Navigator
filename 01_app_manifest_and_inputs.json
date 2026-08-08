@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "app_metadata": {
+    "app_name": "AspiraPath AI Career Navigator",
+    "export_url": "https://partyrock.aws/u/surekha/qxqxDFJH4/AspiraPath-AI-Career-Navigator",
+    "tagline": "Dream it. Plan it. Achieve it.",
+    "description": "AspiraPath AI is your constraint-aware career and learning navigator. Whether you're returning from a career break, entering the workforce, or pivoting to a new field, this tool creates a personalized, achievable roadmap based on your real-world limitations and aspirations.",
+    "version": "1.0.0"
+  },
+  "user_input_widgets": [
+    {
+      "widget_id": "Career_Aspiration",
+      "type": "user_input",
+      "label": "Career Aspiration",
+      "placeholder": "e.g., Transition into a Data Product Specialist / Junior Product Manager role in a hybrid or remote environment."
+    },
+    {
+      "widget_id": "Current_Situation",
+      "type": "user_input",
+      "label": "Current Situation",
+      "placeholder": "e.g., Returning professional with a 5-year career break due to maternity/caregiving. Past background as a Business Analyst."
+    },
+    {
+      "widget_id": "Financial_Constraints",
+      "type": "user_input",
+      "label": "Financial Constraints",
+      "placeholder": "e.g., Budget strictly under ₹3,000 for learning and certifications; prefers free open-source resources."
+    },
+    {
+      "widget_id": "Time_Constraints",
+      "type": "user_input",
+      "label": "Time Constraints",
+      "placeholder": "e.g., 10-12 hours/week available (mostly 6:30-7:15 AM and 9:00-9:45 PM). Caregiving duties blocked 4:00-8:30 PM."
+    },
+    {
+      "widget_id": "Geographic_and_Other_Constraints",
+      "type": "user_input",
+      "label": "Geographic and Other Constraints",
+      "placeholder": "e.g., Mobile-first learning preferred during commute/breaks; low initial confidence in modern tech tools (SQL, Jira, AI workflows)."
+    },
+    {
+      "widget_id": "Life_Change_Scenario",
+      "type": "user_input",
+      "label": "Life Change Scenario",
+      "placeholder": "e.g., Missed 4 consecutive days in Week 5 due to child illness (6 hours lost). Need to recalculate schedule."
+    }
+  ]
+}
