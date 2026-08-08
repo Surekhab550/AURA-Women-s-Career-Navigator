@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "app_metadata": {
+    "app_name": "AspiraPath AI Career Navigator",
+    "export_url": "https://partyrock.aws/u/surekha/qxqxDFJH4/AspiraPath-AI-Career-Navigator",
+    "tagline": "Dream it. Plan it. Achieve it.",
+    "description": "AspiraPath AI is your constraint-aware career and learning navigator. Whether you're returning from a career break, entering the workforce, or pivoting to a new field, this tool creates a personalized, achievable roadmap based on your real-world limitations and aspirations.",
+    "version": "1.0.0"
+  },
+  "partyrock_widgets_config": [
+    {
+      "widget_id": "Career_Aspiration",
+      "type": "user_input",
+      "label": "Career Aspiration",
+      "placeholder": "e.g., Transition into a Data Product Specialist / Junior Product Manager role in a hybrid or remote environment."
+    },
+    {
+      "widget_id": "Current_Situation",
+      "type": "user_input",
+      "label": "Current Situation",
+      "placeholder": "e.g., Returning professional with a 5-year career break due to maternity/caregiving. Past background as a Business Analyst."
+    },
+    {
+      "widget_id": "Financial_Constraints",
+      "type": "user_input",
+      "label": "Financial Constraints",
+      "placeholder": "e.g., Budget strictly under ₹3,000 for learning and certifications; prefers free open-source resources."
+    },
+    {
+      "widget_id": "Time_Constraints",
+      "type": "user_input",
+      "label": "Time Constraints",
+      "placeholder": "e.g., 10-12 hours/week available (mostly 6:30-7:15 AM and 9:00-9:45 PM). Caregiving duties blocked 4:00-8:30 PM."
+    },
+    {
+      "widget_id": "Geographic_and_Other_Constraints",
+      "type": "user_input",
+      "label": "Geographic and Other Constraints",
+      "placeholder": "e.g., Mobile-first learning preferred during commute/breaks; low initial confidence in modern tech tools (SQL, Jira, AI workflows)."
+    },
+    {
+      "widget_id": "Transferable_Skills_Analysis",
+      "type": "text_generation",
+      "label": "Transferable Skills Analysis",
+      "prompt_template": "You are AspiraPath AI. Analyze the user's input:\n- Current Situation: @Current_Situation\n- Career Aspiration: @Career_Aspiration\n\nIdentify and highlight hidden transferable strengths from past work, caregiving, community leadership, and life management. Map these explicitly to industry competencies for the target role using a markdown table."
+    },
+    {
+      "widget_id": "Skill_Gap_Assessment",
+      "type": "text_generation",
+      "label": "Skill Gap Assessment",
+      "prompt_template": "You are AspiraPath AI. Compare:\n- Target Goal: @Career_Aspiration\n- Transferable Skills: @Transferable_Skills_Analysis\n- Constraints: @Geographic_and_Other_Constraints\n\nList the top 3-4 critical skill gaps to bridge. Distinguish between what the user already possesses (e.g., 70-75% existing/transferable) vs. the specific missing technical/domain gaps (25-30%)."
+    },
+    {
+      "widget_id": "Constraint_Aware_Learning_Roadmap",
+      "type": "text_generation",
+      "label": "Constraint-Aware Learning Roadmap",
+      "prompt_template": "You are AspiraPath AI. Build a phased 30-60-90 day learning plan using:\n- Skill Gap Assessment: @Skill_Gap_Assessment\n- Financial Constraints: @Financial_Constraints\n- Time Constraints: @Time_Constraints\n\nFor every recommended resource, provide:\n1. Resource/Course Name\n2. Specific Reason for Selection\n3. Exact Cost (strictly respecting @Financial_Constraints)\n4. Expected Learning Outcome"
+    },
+    {
+      "widget_id": "Portfolio_Project_Generator",
+      "type": "text_generation",
+      "label": "Portfolio Project Generator",
+      "prompt_template": "You are AspiraPath AI. Based on @Career_Aspiration and @Constraint_Aware_Learning_Roadmap, generate 1 tangible proof-of-learning capstone project (e.g., Product Requirement Document, case study, or GitHub repository). Provide core deliverables that the candidate can use to demonstrate job readiness to employers."
+    },
+    {
+      "widget_id": "Action_Plan_12_Week",
+      "type": "text_generation",
+      "label": "12-Week Action Plan",
+      "prompt_template": "You are AspiraPath AI. Using @Time_Constraints and @Constraint_Aware_Learning_Roadmap, build a weekly schedule (Weeks 1 to 12). Include a day-by-day micro-learning routine (Mon-Sun) that strictly respects blocked family/personal time slots."
+    },
+    {
+      "widget_id": "Life_Change_Scenario",
+      "type": "user_input",
+      "label": "Life Change Scenario",
+      "placeholder": "e.g., Missed 4 consecutive days in Week 5 due to child illness (6 hours lost). Need to recalculate schedule."
+    },
+    {
+      "widget_id": "What_If_Career_Path_Recalculation",
+      "type": "text_generation",
+      "label": "What-If Career Path Recalculation",
+      "prompt_template": "You are AspiraPath AI. When a life interruption occurs (@Life_Change_Scenario), execute a Zero-Guilt Re-calibration on @Action_Plan_12_Week. Explain how to compress/shift lessons, utilize buffer days, or convert content to short audio bites without extending the target completion deadline."
+    },
+    {
+      "widget_id": "Career_Readiness_Score_and_Next_Steps",
+      "type": "text_generation",
+      "label": "Career Readiness Score and Next Steps",
+      "prompt_template": "You are AspiraPath AI. Calculate a composite Career Readiness Score (0–100%) based on @Transferable_Skills_Analysis, @Skill_Gap_Assessment, and @Portfolio_Project_Generator. Provide a breakdown across Skill Mastery, Portfolio Build, Tooling Alignment, and Interview Readiness, along with immediate next steps."
+    },
+    {
+      "widget_id": "Career_Navigator_Chat",
+      "type": "chatbot",
+      "label": "Career Navigator Chat",
+      "system_prompt": "Assistant: I'm your AspiraPath AI career navigator! I've reviewed your personalized plan. Ask me anything about your roadmap, how to overcome specific constraints, clarification on any recommendations, or how to adapt your plan as life changes. I'm here to help you achieve your career aspiration!",
+      "initial_user_message_template": "Human: I want to discuss my personalized career plan. My aspiration is @Career_Aspiration, my current situation is @Current_Situation, my constraints are financial: @Financial_Constraints, time: @Time_Constraints, and other: @Geographic_and_Other_Constraints. My skill gaps are @Skill_Gap_Assessment and my roadmap is @Constraint_Aware_Learning_Roadmap."
+    }
+  ],
+  "sample_execution_profile": {
+    "career_aspiration": "Data Product Specialist / Junior Product Manager",
+    "current_situation": "Former Business Analyst with a 5-year career break due to caregiving/maternity.",
+    "financial_constraints": "Budget under ₹3,000 for courses/certifications.",
+    "time_constraints": "10-12 hours/week available. Caregiving blocked from 4:00 PM to 8:30 PM.",
+    "geographic_and_other_constraints": "Remote/hybrid preference in India. Low initial confidence in modern tech tools (SQL, Jira, AI workflows)."
+  }
+}
