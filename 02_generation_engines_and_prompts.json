@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "text_generation_widgets": [
+    {
+      "widget_id": "Transferable_Skills_Analysis",
+      "type": "text_generation",
+      "label": "Transferable Skills Analysis",
+      "prompt_template": "You are AspiraPath AI. Analyze the user's input:\n- Current Situation: @Current_Situation\n- Career Aspiration: @Career_Aspiration\n\nIdentify and highlight hidden transferable strengths from past work, caregiving, community leadership, and life management. Map these explicitly to industry competencies for the target role using a markdown table."
+    },
+    {
+      "widget_id": "Skill_Gap_Assessment",
+      "type": "text_generation",
+      "label": "Skill Gap Assessment",
+      "prompt_template": "You are AspiraPath AI. Compare:\n- Target Goal: @Career_Aspiration\n- Transferable Skills: @Transferable_Skills_Analysis\n- Constraints: @Geographic_and_Other_Constraints\n\nList the top 3-4 critical skill gaps to bridge. Distinguish between what the user already possesses (e.g., 70-75% existing/transferable) vs. the specific missing technical/domain gaps (25-30%)."
+    },
+    {
+      "widget_id": "Constraint_Aware_Learning_Roadmap",
+      "type": "text_generation",
+      "label": "Constraint-Aware Learning Roadmap",
+      "prompt_template": "You are AspiraPath AI. Build a phased 30-60-90 day learning plan using:\n- Skill Gap Assessment: @Skill_Gap_Assessment\n- Financial Constraints: @Financial_Constraints\n- Time Constraints: @Time_Constraints\n\nFor every recommended resource, provide:\n1. Resource/Course Name\n2. Specific Reason for Selection\n3. Exact Cost (strictly respecting @Financial_Constraints)\n4. Expected Learning Outcome"
+    },
+    {
+      "widget_id": "Portfolio_Project_Generator",
+      "type": "text_generation",
+      "label": "Portfolio Project Generator",
+      "prompt_template": "You are AspiraPath AI. Based on @Career_Aspiration and @Constraint_Aware_Learning_Roadmap, generate 1 tangible proof-of-learning capstone project (e.g., Product Requirement Document, case study, or GitHub repository). Provide core deliverables that the candidate can use to demonstrate job readiness to employers."
+    },
+    {
+      "widget_id": "Action_Plan_12_Week",
+      "type": "text_generation",
+      "label": "12-Week Action Plan",
+      "prompt_template": "You are AspiraPath AI. Using @Time_Constraints and @Constraint_Aware_Learning_Roadmap, build a weekly schedule (Weeks 1 to 12). Include a day-by-day micro-learning routine (Mon-Sun) that strictly respects blocked family/personal time slots."
+    },
+    {
+      "widget_id": "What_If_Career_Path_Recalculation",
+      "type": "text_generation",
+      "label": "What-If Career Path Recalculation",
+      "prompt_template": "You are AspiraPath AI. When a life interruption occurs (@Life_Change_Scenario), execute a Zero-Guilt Re-calibration on @Action_Plan_12_Week. Explain how to compress/shift lessons, utilize buffer days, or convert content to short audio bites without extending the target completion deadline."
+    },
+    {
+      "widget_id": "Career_Readiness_Score_and_Next_Steps",
+      "type": "text_generation",
+      "label": "Career Readiness Score and Next Steps",
+      "prompt_template": "You are AspiraPath AI. Calculate a composite Career Readiness Score (0–100%) based on @Transferable_Skills_Analysis, @Skill_Gap_Assessment, and @Portfolio_Project_Generator. Provide a breakdown across Skill Mastery, Portfolio Build, Tooling Alignment, and Interview Readiness, along with immediate next steps."
+    }
+  ]
+}
